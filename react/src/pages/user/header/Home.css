@@ -1,0 +1,117 @@
+/* ------------Home-------------- */
+
+.homecontainer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.homejobtitel {
+  margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-left: 0px;
+    text-align: left;
+}
+.homeCompanyName{
+  margin-bottom: 0rem;
+    font-weight: 500;
+    line-height: 2;
+    color:  hsl(235, 100%, 50%);
+    margin-left: 0px;
+    text-align: left;
+}
+.homeskills {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--bs-heading-color);
+  margin-left: 0px;
+  text-align: left;
+  margin-right: 0rem;
+}
+.homesalary {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-right: 0px;
+    text-align: center;
+}
+
+.homeexperience {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-left: 0px;
+    text-align: right;
+}
+.homecontactEmail {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-left: 0px;
+    text-align: left;
+}
+.homeapplybutton{
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: aliceblue;
+  margin-left: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: #000000;;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+
+}
+.h6text{
+  margin-top: 11px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 0px;
+    color: var(--bs-heading-color);
+}
+.homeapplybutton:hover{
+  background-color: #e5e5e5;
+  color: rgb(0, 0, 0);
+}
+.homepost{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgb(0, 0, 0);
+  margin-left: 0px;
+  text-align: center;
+  width: 100%;
+}
+.homeform {
+    padding: 20px;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    width: 50%;
+    align-items: center;
+    box-shadow: #282c34;
+}
+.homesearchbtn{
+  border-radius: 4px;
+  box-shadow: #282c34;
+}
