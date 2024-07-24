@@ -56,17 +56,27 @@ const Header = () => {
                                         className={activeLink === '/' ? 'active' : ''}
                                         onClick={() => handleNavLinkClick('/')}
                                     >
-                                        Job Seekers
+                                        Home
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink
-                                        to="/adminsignup"
+                                        to="/jobs"
                                         exact
-                                        className={activeLink === '/adminsignup' ? 'active' : ''}
-                                        onClick={() => handleNavLinkClick('/adminsignup')}
+                                        className={activeLink === '/jobs' ? 'active' : ''}
+                                        onClick={() => handleNavLinkClick('/jobs')}
                                     >
-                                        Job Post
+                                        Jobs
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/services"
+                                        exact
+                                        className={activeLink === '/services' ? 'active' : ''}
+                                        onClick={() => handleNavLinkClick('/services')}
+                                    >
+                                        Services
                                     </NavLink>
                                 </li>
                             </ul>
@@ -75,7 +85,22 @@ const Header = () => {
                         <div className="right-section">
                             {/* //-------Admin Login & Signup--------\\ */}
                             <Link to="/login" ><button className="login-btn">Login</button> </Link>
-                            <Link to="/signup" ><button className="signup-btn">Signup</button></Link>
+                            <Link to="/signup" ><button className="signup-btn" style={{border: "2px solid #ffffff"}}>Register</button></Link>
+                            <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+                                <NavLink
+                                    to="/adminsignup"
+                                    exact
+                                    className={activeLink === '/adminsignup' ? 'active' : ''}
+                                    onClick={() => handleNavLinkClick('/adminsignup')}
+                                    style={{
+                                        borderLeft: "2px solid white",
+                                        marginLeft: "21px",
+                                        padding: "10px 21px 10px 21px",
+                                    }}
+                                >
+                                    Recruiter
+                                </NavLink>
+                            </div>
                         </div>
 
                     </>)}
@@ -85,8 +110,8 @@ const Header = () => {
                     </div>
 
                 </div>
-            </nav>
-        </div>
+            </nav >
+        </div >
     )
 }
 

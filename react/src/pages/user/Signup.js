@@ -42,49 +42,58 @@ const Signup = () => {
 
   return (
     <>
-      <div className="signup-form-container">
-        <h2>Sign Up User</h2>
-        {message && <div className="message">{message}</div>}
-        <form onSubmit={handleSubmit} className="signup-form">
-        <Link className="forgetpassword" to="/login"><strong>Already Have An Account</strong></Link>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="tel"
-            name="phoneNo"
-            placeholder="Phone Number"
-            value={formData.phoneNo}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          <button className="button-btn" type="submit">Sign Up</button>
-        </form>
-      </div>
-    </>
+      <div>
+        <div className="diva">
+          <p className="para1">Keep Applying!!</p>
+          <p className="para2">200% HIKE IN SALARY</p>
+          <p className="para3">
+          Your dream job is closer than you think. We focus on your career aspirations, matching your unique skills and goals with the best opportunities available. Our personalized approach ensures you find the perfect fit. Start your journey to success with us today and unlock your full potential!
+          </p>
+        </div>
+        <div className="signup-form-container">
+          <h2>Sign Up User</h2>
+          {message && <div className="message">{message}</div>}
+          <form onSubmit={handleSubmit} className="signup-form">
+            <Link style={{ color: "#67b311" }} to="/login"><strong>Already Have An Account</strong></Link>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="tel"
+              name="phoneNo"
+              placeholder="Phone Number"
+              value={formData.phoneNo}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button className="button-btn" type="submit">Sign Up</button>
+          </form>
+        </div>
+        </div>
+      </>
 
-  )
+      )
 }
 
-export default Signup
+      export default Signup

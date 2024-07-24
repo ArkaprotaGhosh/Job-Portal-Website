@@ -12,6 +12,10 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminLayout from './pages/admin/adminheader/AdminLayout';
 import GetJobsAdmin from './pages/admin/adminDashboard/GetJobsAdmin';
 import UpdateJobs from './pages/admin/adminDashboard/UpdateJobs';
+import Jobs from './pages/user/header/Jobs';
+import Services from './pages/user/header/Services';
+import JobPage from './pages/user/header/JobPage';
+import JobDetails from './pages/user/header/JobDetails';
 
 
 function App() {
@@ -31,12 +35,16 @@ function App() {
 
           {/* ----------------header------------------- */}
 
+          <Route path='/jobs' element={<JobPage />} />
+          <Route path='/jobslist' element={<Jobs />} />
+          <Route path='/jobsdetails/:id' element={<JobDetails />} />
+          <Route path='/services' element={<Services />} />
           <Route path='/' element={<Home />} />
           {/* //-------user login signup forgetpassword changepassword------------\\ */}
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
-        
+
 
         </Route>
         <Route element={<AdminLayout />}>

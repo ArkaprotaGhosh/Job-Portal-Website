@@ -1,39 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import './Home.css'
-// import { redirect } from 'react-router-dom';
-import { UseAutheContext } from "../../../hooks/UseAutheContext";
-import { Link } from 'react-router-dom';
-import { Table } from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { assets } from "../../../assets/assets.js";
+import { Link } from "react-router-dom";
+import { CgEnter, CgProfile } from "react-icons/cg";
+import { IoIosSearch } from "react-icons/io";
+import { LuUpload } from "react-icons/lu";
+import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 
 const Home = () => {
-  const [users, setUser] = useState([]);
-  const { user } = UseAutheContext()
-  // const [message, setMessage] = useState('');
-
-  async function fetchData() {
-    try {
-      const response = await fetch('http://localhost:5008/api/addjob/getalljob')
-      // console.log(response);
-      const data = await response.json();
-      // setMessage('Internal Error!');
-      // console.log(data);
-      setUser(data.data)
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const handleOpenLink = (url) => {
-    window.open(url, '_blank');
-  };
-
-
-  //--------------Search--------------\\
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -44,7 +18,9 @@ const Home = () => {
 
         // Perform your search API call here
         // const encodedSearchTerm = encodeURIComponent(searchTerm);
-        const response = await fetch(`http://localhost:5008/api/addjob/getJobbyjobRole/?jobRole=${(searchTerm)}`)
+        const response = await fetch(
+          `http://localhost:5008/api/addjob/getJobbyjobRole/?jobRole=${searchTerm}`
+        );
 
         console.log("response==================>", response);
         console.log("searchitem---------------->", searchTerm);
@@ -55,16 +31,13 @@ const Home = () => {
           setSearchResults(data.data);
           setLoading(false);
         }
-
-
-
       } catch (error) {
-        console.error('Error fetching search results:', error);
+        console.error("Error fetching search results:", error);
         setLoading(false);
       }
     };
 
-    if (searchTerm.trim() !== '') {
+    if (searchTerm.trim() !== "") {
       fetchData();
     } else {
       setSearchResults([]);
@@ -74,166 +47,465 @@ const Home = () => {
   const handleSearchInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
-  const searchResultsLenght = searchResults?.length
+  const searchResultsLenght = searchResults?.length;
 
+  const jobCategories = [
+    { title: "Graphic Designer", openings: 167 },
+    { title: "Content Writer", openings: 97 },
+    { title: "Video Editor", openings: 130 },
+    { title: "UI Designer", openings: 70 },
+    { title: "Health & Care", openings: 55 },
+    { title: "Code & Programming", openings: 67 },
+    { title: "Accounts & Finance", openings: 167 },
+    { title: "Data Science", openings: 167 },
+  ];
 
   return (
     <>
-      <form  >
-        {/* {message && <div className="message">{message}</div>} */}
-        <input
-          className='homeform'
-          type="text"
-          id="Search"
-          name="Search"
-          placeholder='Search...'
-          value={searchTerm}
-          onChange={handleSearchInputChange}
-
-
-        />
-        {/* <button  className='homesearchbtn' type="submit">Search</button> */}
-      </form>
-      {loading && <p>Loading...</p>}
-      {/* {searchResultsLenght > 0 && (
-        <ul>
-          {searchResults.map((result) => (
-            <li key={result.id}>{result.title}</li>
-          ))}
-        </ul>
-      )}
-      {searchResultsLenght === 0 && !loading && searchTerm.trim() !== '' && (
-        <p>No results found.</p>
-      )} */}
-      <div>
-
-
+      <section
+      // style={{ paddingTop: "100px", backgroundImage: `url(${assets.image})`,backgroundSize: 'cover',     }}
+      >
         <div>
-          <p className='homepost'>Don't Worry! We are here for your latest job updates by top MNCs.</p>
-          <p className='homepost'>So Keep Applying! </p>
-          <p className='homepost' style={{ color: "red" }}>And if you're an HR professional or recruiter, please visit our Job Post page to get a free recruiter account! </p>
-        </div>
-
-
-      </div>
-
-
-      {/* <SearchComponent /> */}
-      {searchTerm && (<>{searchResultsLenght > 0 && (<>{!user && (<>
-        {searchResults.map((user, index) => (<ul className='homecontainer' key={index}>
-          {/* <td>{user._id}</td> */}
-          <div type="url" onClick={() => handleOpenLink(user.companyWebsiteLink)} ><h6 className='homeCompanyName'>{user.companyName}</h6></div>
-          <div><h1 className='homejobtitel'>{user.jobRole}</h1></div>
-          <div><h6 className='homecontactEmail'>Email: {user.contactEmail}</h6></div>
-          <div><h6 className='homecontactEmail'>Skills: {user.contactEmail}</h6></div>
           <div>
-            <Table>
-              <td><p className='homeskills'>Location: {user.location}</p></td>
-              <td><h6 className='homesalary'>Salary: {user.salary}</h6></td>
-              <td><h6 className='homeexperience'>Experience: {user.experience}</h6></td>
-            </Table>
+            <img
+              className="addSection1 "
+              src={assets.img1}
+              alt="Description of the image"
+            />
           </div>
-          <div> <Link to="/login" ><button  className='homeapplybutton' ><h6 className='h6text'>Login To Get Access To Apply Jobs</h6></button></Link></div>
-        </ul>)
-        )}
-      </>)}
+          {/* <div className='backgroung'></div> */}
 
-        {/* <form className='homecontainer'> */}
-        {user && (<>{searchResults.map((user, index) =>
-        (
-          <ul className='homecontainer' key={index}>
-            {/* <td>{user._id}</td> */}
-            <div type="url" onClick={() => handleOpenLink(user.companyWebsiteLink)} ><h6 className='homeCompanyName'>{user.companyName}</h6></div>
-            <div><h1 className='homejobtitel'>{user.jobRole}</h1></div>
-            <div><h6 className='homecontactEmail'>Email: {user.contactEmail}</h6></div>
-            <div>
+          <div>
+            <h1
+              className="hometext1"
+              style={{
+                color: "white",
+                marginTop: "-425px",
+                fontSize: "3.15rem",
+              }}
+            >
+              Find Your Dream Job Today!{" "}
+            </h1>
+            <p
+              className="hometext2"
+              style={{ color: "white", marginTop: "2rem" }}
+            >
+              Explore thousand of job listing from top companies !{" "}
+            </p>
+          </div>
+          <div
+            className="homeform"
+            style={{
+              marginBottom: "100px",
+              backgroundColor: "#f0f8ff00",
+              borderColor: "white",
+              backdropFilter: "blur",
+              boxShadow: "0px, 0px 0px 0px white",
+              marginTop: "15px",
+              border: "2px solid rgb(255 255 255)",
+              display: "inline-block",
+            }}
+          >
+            <form>
+              {/* {message && <div className="message">{message}</div>} */}
+              <div style={{ display: "inline-flex" }}>
+                <IoIosSearch />
+              </div>
 
-              <Table>
-                <td><p className='homeskills'>Skills: {user.skills}</p></td>
-                <td><h6 className='homesalary'>Salary: {user.salary}</h6></td>
-                <td><h6 className='homeexperience'>Experience: {user.experience}</h6></td>
-              </Table>
-
-
-
-            </div>
-
-            <div> <button className='homeapplybutton' onClick={() => handleOpenLink(user.companyApplyWebsiteLink)}><h6 className='h6text'>Apply</h6></button></div>
-
+              <input
+                type="text"
+                id="Search"
+                name="Search"
+                placeholder="Enter Job Titel"
+                value={searchTerm}
+                onChange={handleSearchInputChange}
+                style={{
+                  padding: "14px",
+                  width: "20%",
+                  backgroundColor: "#f0f8ff00",
+                  color: "white",
+                  borderRadius: "0px",
+                  border: "0px solid #ccc",
+                  marginBottom: "0px",
+                  width: "40%",
+                }}
+              />
+              <input
+                type="text"
+                id="Search"
+                name="Search"
+                placeholder="Enter Location"
+                value={searchTerm}
+                onChange={handleSearchInputChange}
+                style={{
+                  padding: "0px 10px 0px 20px",
+                  width: "20%",
+                  marginBottom: "100px",
+                  backgroundColor: "#f0f8ff00",
+                  color: "white",
+                  borderRadius: "0px",
+                  border: "0px solid #ccc",
+                  width: "40%",
+                  borderLeft: "1px solid white",
+                  borderRight: "0px",
+                }}
+              />
+              <button
+                className="homesearchbtn"
+                style={{ border: "0px", fontSize: "18px" }}
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+          {loading && <p>Loading...</p>}
+          {/* {searchResultsLenght > 0 && (
+          <ul>
+            {searchResults.map((result) => (
+              <li key={result.id}>{result.title}</li>
+            ))}
           </ul>
-        ))}
-          {/* </form> */}</>)}</>)}
+        )}
         {searchResultsLenght === 0 && !loading && searchTerm.trim() !== '' && (
           <p>No results found.</p>
-        )}
-      </>)}
+        )} */}
 
+          <div
+            className="popularSearch"
+            style={{
+              backgroundColor: "white",
+              borderColor: "white",
+              backdropFilter: "blur",
+              boxShadow: "0px 0px 5px 1px rgb(100 100 100)",
+              margin: "-13px 0px 69px 10px",
+              display: "inline-block",
+            }}
+          >
+            <div
+              className="popularSearch1"
+              style={{
+                backgroundColor: "#16558F",
+                borderColor: "white",
+                backdropFilter: "blur",
+                margin: "0px 0px 0px 0px",
+                display: "inline-block",
+              }}
+            >
+              <h1>
+                Popular <br /> Searches
+              </h1>
 
+              <p style={{ fontSize: "x-small" }}>
+                the advice helped me feel prepared and confident. gies for acing
+                interviews, the advice helped me feel prepared and confident.
+              </p>
 
-      {/* //-------------with out search------------------\\ */}
-
-
-      {/* //------------not logged in--------------\\ */}
-
-      {!searchTerm && (<>{!user && (<>
-        {users.map((user, index) => (<ul className='homecontainer' key={index}>
-          {/* <td>{user._id}</td> */}
-          <div type="url" onClick={() => handleOpenLink(user.companyWebsiteLink)} ><h6 className='homeCompanyName'>{user.companyName}</h6></div>
-          <div><h1 className='homejobtitel'>{user.jobRole}</h1></div>
-          <div><h6 className='homecontactEmail'>Email: {user.contactEmail}</h6></div>
-          <div><h6 className='homecontactEmail'>Skills: {user.contactEmail}</h6></div>
-          <div>
-            <Table>
-              <td><p className='homeskills'>Location: {user.location}</p></td>
-              <td><h6 className='homesalary'>Salary: {user.salary}</h6></td>
-              <td><h6 className='homeexperience'>Experience: {user.experience}</h6></td>
-            </Table>
-
-
-
-
-
-          </div>
-
-          <div> <Link to="/login" ><button className='homeapplybutton' ><h6  className='h6text'>Login To Get Access To Apply Jobs</h6></button></Link></div>
-
-        </ul>)
-        )
-        }
-      </>)}
-
-        {/* <form className='homecontainer'> */}
-        {user && (<>{users.map((user, index) =>
-        (
-          <ul className='homecontainer' key={index}>
-            {/* <td>{user._id}</td> */}
-            <div type="url" onClick={() => handleOpenLink(user.companyWebsiteLink)} ><h6 className='homeCompanyName'>{user.companyName}</h6></div>
-            <div><h1 className='homejobtitel'>{user.jobRole}</h1></div>
-            <div><h6 className='homecontactEmail'>Email: {user.contactEmail}</h6></div>
-            <div>
-
-              <Table>
-                <td><p className='homeskills'>Skills: {user.skills}</p></td>
-                <td><h6 className='homesalary'>Salary: {user.salary}</h6></td>
-                <td><h6 className='homeexperience'>Experience: {user.experience}</h6></td>
-              </Table>
-
-
-
+              <Link to="/jobs">
+                <button
+                  className="popularSearchbtn"
+                  style={{
+                    borderRadius: "5px",
+                    fontSize: "small",
+                    boxShadow: "rgb(0 0 0) 0px 2px 5px 0px",
+                    height: "36px",
+                    border: "0px",
+                  }}
+                >
+                  Browse Jobs
+                </button>
+              </Link>
             </div>
 
-            <div> <button className='homeapplybutton' onClick={() => handleOpenLink(user.companyApplyWebsiteLink)}><h6 >Apply</h6></button></div>
+            <div
+              className="popularSearch2"
+              style={{
+                borderColor: "white",
+                backdropFilter: "blur",
+                boxShadow: "rgb(29 29 29) 0px 0px 2px 0px",
+                margin: "-252px 0px 0px 338px",
+                borderRadius: "0px 0px 0px 0px",
+              }}
+            >
+              <p style={{ marginBottom: "0rem", marginTop: "14px" }}>
+                UI/UX Designer
+              </p>
+              <p style={{ fontSize: "medium", marginBottom: "0rem" }}>
+                2500+ Jobs
+              </p>
+            </div>
+            <div
+              className="popularSearch2"
+              style={{
+                borderColor: "white",
+                backdropFilter: "blur",
+                boxShadow: "rgb(29 29 29) 0px 0px 2px 0px",
+                margin: "7px 0px 0px 338px",
+                borderRadius: "0px 0px 0px 0px",
+              }}
+            >
+              <p style={{ marginBottom: "0rem", marginTop: "10px" }}>
+                UI/UX Designer
+              </p>
+              <p style={{ fontSize: "medium", marginBottom: "0rem" }}>
+                2500+ Jobs
+              </p>
+            </div>
+            <div
+              className="popularSearch2"
+              style={{
+                borderColor: "white",
+                backdropFilter: "blur",
+                boxShadow: "rgb(29 29 29) 0px 0px 2px 0px",
+                margin: "-251px 0px 0px 571px",
+                borderRadius: "0px 10px 0px 0px",
+              }}
+            >
+              <p style={{ marginBottom: "0rem", marginTop: "14px" }}>
+                UI/UX Designer
+              </p>
+              <p style={{ fontSize: "medium", marginBottom: "0rem" }}>
+                2500+ Jobs
+              </p>
+            </div>
+            <div
+              className="popularSearch2"
+              style={{
+                borderColor: "white",
+                backdropFilter: "blur",
+                boxShadow: "rgb(29 29 29) 0px 0px 2px 0px",
+                margin: "7px 0px 0px 571px",
+                borderRadius: "0px 0px 10px 0px",
+              }}
+            >
+              <p style={{ marginBottom: "0rem", marginTop: "10px" }}>
+                UI/UX Designer
+              </p>
+              <p style={{ fontSize: "medium", marginBottom: "0rem" }}>
+                2500+ Jobs
+              </p>
+            </div>
+          </div>
+          <div>
+            <h1 style={{ fontWeight: "bold" }}>
+              How{" "}
+              <h1
+                style={{
+                  display: "inline-block",
+                  color: "#2171D5",
+                  fontWeight: "bold",
+                }}
+              >
+                It Works
+              </h1>
+            </h1>
+            <button
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "inline-block" }}
+            >
+              Create Your Profile
+            </button>
+            <p
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "contents" }}
+            >
+              {" "}
+              ---------&gt;{" "}
+            </p>
+            <button
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "inline-block" }}
+            >
+              Search For Jobs
+            </button>
+            <p
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "contents" }}
+            >
+              {" "}
+              ---------&gt;{" "}
+            </p>
+            <button
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "inline-block" }}
+            >
+              Apply For Jobs
+            </button>
+            <p
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "contents" }}
+            >
+              {" "}
+              ---------&gt;{" "}
+            </p>
+            <button
+              className="howitworks"
+              style={{ margin: "50px 0px 50px 0px", display: "inline-block" }}
+            >
+              Get Hired
+            </button>
+          </div>
+          <div>
+            <div className="homemobile">
+              <div className="homemobileinner">
+                <div className="profileicon">
+                  {/* <div> */}
+                  <CgProfile />
+                  {/* </div> */}
+                </div>
 
-          </ul>
-        ))}
-          {/* </form> */}</>)}</>)}
-      <div>
-        <p>Referesh the page to get more job updates</p>
-      </div>
+                <button className="profilebutton">
+                  <div style={{ display: "inline" }}>
+                    <LuUpload /> Upload
+                  </div>
+                </button>
+                <h6 style={{ textAlign: "left" }}>Personal information</h6>
+                <div className="mobileinnerrmost">
+                  <button className="profileSmalldisplay"></button>
+                  <button className="profilelargedisplay"></button>
+                  <button className="profileSmalldisplay"></button>
+                  <button className="profilelargedisplay"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              className="homemobile"
+              // style={{    margin: "0px 0px 0px 0px", display: "inline-block"}}
+            >
+              <div
+                className="homemobileinner"
+                style={{ padding: "20px 15px 0px 15px" }}
+              >
+                <div className="ndmobile">
+                  <div
+                    className="profileicon"
+                    style={{
+                      width: "100px",
+                      margin: "0px 44px 0px 0px",
+                      textAlign: "left",
+                      padding: "0px 10px",
+                      height: "29px",
+                    }}
+                  >
+                    {/* <div> */}
+                    <IoIosSearch />
+                    {/* </div> */}
+                  </div>
 
+                  <button className="profilebutton">Search</button>
+                </div>
+                <div className="mobileinnerrmost">
+                  <button className="profileSmalldisplay"></button>
+                  <button className="profilelargedisplay"></button>
+                  <button className="profileSmalldisplay"></button>
+                  <button className="profilelargedisplay"></button>
+                </div>
+              </div>
+            </div>
+            <div className="homemobile">
+              <div
+                className="homemobileinner"
+                style={{ padding: "20px 15px 0px 15px" }}
+              >
+                <div
+                  className="ndmobile"
+                  style={{ width: "100%", flexFlow: "row-reverse" }}
+                >
+                  <button
+                    className="profilebutton"
+                    style={{ alignItems: "end" }}
+                  >
+                    Apply
+                  </button>
+                </div>
+                <div className="mobileinnerrmost">
+                  <button className="profileSmalldisplay"></button>
+                  <button className="profilelargedisplay"></button>
+                  <button className="profileSmalldisplay"></button>
+                  <button className="profilelargedisplay"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <Container>
+          <div className="d-flex justify-content-center align-items-center">
+            <div
+              className="text-center p-4 mb-5"
+              style={{
+                borderRadius: "0px 0px 40px 40px",
+                backgroundColor: "rgb(22, 85, 143)",
+                width: "85%",
+                color: "whitesmoke"
+              }}
+            >
+              <h2>Featured Jobs</h2>
+              <p>The advice helped me feel prepared</p>
+            </div>
+          </div>
+          <Container className="d-flex justify-content-center align-items-center" style={{ width: '85%' }}>
+            <Row>
+              {jobCategories.map((category, index) => (
+                <Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-4">
+                  <Card className="text-center">
+                    <Card.Body>
+                      <Card.Title>{category.title}</Card.Title>
+                      <Card.Text>{category.openings} Openings</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+            </Container>
+          <div className="text-center p-5">
+            <a href="#explore-more">Explore More</a>
+          </div>
+        </Container>
+      </section>
+      <section>
+        <div className="sectionThree">
+      <h2 className="text-center my-4">Top companies Hiring Now</h2>
+      <Carousel indicators={false} nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />} prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} className="custom-carousel">
+        <Carousel.Item>
+          <div className="d-flex justify-content-center">
+            <div className="job-card">
+              <h3 className="company-logo">KOMATSU</h3>
+              <h4>Data Science</h4>
+              <p>Jaipur, Rajasthan</p>
+              <p>Full Time</p>
+              <button className="btn btn-primary">View jobs</button>
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="d-flex justify-content-center">
+            <div className="job-card">
+              <h3 className="company-logo">NTT</h3>
+              <h4>Graphic Designer</h4>
+              <p>Kolkata, West Bengal</p>
+              <p>Full Time</p>
+              <button className="btn btn-primary">View jobs</button>
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="d-flex justify-content-center">
+            <div className="job-card">
+              <h3 className="company-logo">JAL</h3>
+              <h4>UI Designer</h4>
+              <p>Delhi</p>
+              <p>Full Time</p>
+              <button className="btn btn-primary">View jobs</button>
+            </div>
+          </div>
+        </Carousel.Item>
+      </Carousel>
+    </div>
+      </section>
     </>
   );
-}
+};
 
-
-export default Home
+export default Home;

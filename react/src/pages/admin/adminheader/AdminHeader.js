@@ -48,7 +48,7 @@ const AdminHeader = () => {
                                         className={activeLink === '/' ? 'active' : ''}
                                         onClick={() => handleNavLinkClick('/')}
                                     >
-                                        Job Seekers
+                                        Home
                                     </NavLink>
                                 </li>
                                 <li>
@@ -68,6 +68,21 @@ const AdminHeader = () => {
                             {/* //-------Admin Login & Signup--------\\ */}
                             <Link to="/adminlogin" ><button className="login-btn">Login</button> </Link>
                             <Link to="/adminsignup" ><button className="signup-btn">Signup</button></Link>
+                            <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+                                <NavLink
+                                    to="/"
+                                    exact
+                                    className={activeLink === '/adminsignup' ? 'active' : ''}
+                                    onClick={() => handleNavLinkClick('/adminsignup')}
+                                    style={{
+                                        borderLeft: "2px solid white",
+                                        marginLeft: "21px",
+                                        padding: "10px 21px 10px 21px",
+                                    }}
+                                >
+                                    Find Jobs
+                                </NavLink>
+                            </div>
                         </div>
 
                     </>)}

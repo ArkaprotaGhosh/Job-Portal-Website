@@ -1,0 +1,170 @@
+/* ------------jobs-------------- */
+
+.homecontainer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #dddedd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+    box-shadow: 0  0px 14px 0px gray;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+}
+.homecontainer1 {
+    width: 100%;
+    max-width: 1100px;
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #dddedd;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0  0px 14px 0px gray;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+}
+
+.homejobtitel {
+  margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-left: 0px;
+    text-align: left;
+}
+.homeCompanyName{
+  margin-bottom: 0rem;
+    font-weight: 500;
+    line-height: 2;
+    color:  #67b311;
+    margin-left: 0px;
+    text-align: left;
+}
+.homeskills {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--bs-heading-color);
+  margin-left: 0px;
+  text-align: left;
+  margin-right: 0rem;
+}
+.homesalary {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-right: 0px;
+    text-align: center;
+}
+
+.homeexperience {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-left: 0px;
+    text-align: right;
+}
+.homecontactEmail {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    margin-left: 0px;
+    text-align: left;
+}
+.homeapplybutton{
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgb(255, 255, 255);
+  margin-left: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: #67b311;;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #67b311;
+  border-radius: 5px;
+  box-shadow: 0  0px 14px 0px gray;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+
+}
+.h6text{
+  margin-top: 11px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 0px;
+    color: var(--bs-heading-color);
+}
+.homeapplybutton:hover{
+  background-color: #49800a;
+  color: rgb(255, 255, 255);
+}
+.hometext1{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgb(0, 0, 0);
+  margin-left: 0px;
+  text-align: center;
+  width: 100%;
+  /* filter: brightness(100%); */
+  -webkit-text-stroke-width: thin;
+}
+.hometext2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgb(0, 0, 0);
+  margin-left: 0px;
+  text-align: center;
+  width: 100%;
+  /* filter: brightness(100%); */
+  font-size: larger;
+}
+.homeform {
+    padding: 3px;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    height: 60px;
+    width: 58%;
+    align-items: center;
+    box-shadow: 0px 0px 15px 3px white;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+    filter: brightness(100%);
+    border-radius: 5px
+    
+   
+}
+::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: rgb(255, 255, 255);
+}
+.homesearchbtn{
+ border-radius: 5px;
+  box-shadow: #000000;
+  width: 16%;
+  height: 42px;
+  background-color: rgb(14 114 223);
+  color: white;
+}
+
+

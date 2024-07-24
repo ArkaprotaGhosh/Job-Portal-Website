@@ -1,14 +1,29 @@
-/* ------------Home-------------- */
+/* ------------jobs-------------- */
 
 .homecontainer {
     width: 100%;
     max-width: 1100px;
     margin: 10px auto;
     padding: 20px;
-    border: 1px solid #000000;
+    border: 1px solid #dddedd;
     border-radius: 5px;
     background-color: #f9f9f9;
     text-align: left;
+    box-shadow: 0  0px 14px 0px gray;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+}
+.homecontainer1 {
+    width: 100%;
+    max-width: 1100px;
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #dddedd;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0  0px 14px 0px gray;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
 }
 
 .homejobtitel {
@@ -24,7 +39,7 @@
   margin-bottom: 0rem;
     font-weight: 500;
     line-height: 2;
-    color:  hsl(235, 100%, 50%);
+    color:  #67b311;
     margin-left: 0px;
     text-align: left;
 }
@@ -71,15 +86,18 @@
   margin-bottom: 0rem;
   font-weight: 500;
   line-height: 1.2;
-  color: aliceblue;
+  color: rgb(255, 255, 255);
   margin-left: 0px;
   text-align: center;
   width: 100%;
-  background-color: #000000;;
+  background-color: #67b311;;
   cursor: pointer;
   padding: 10px;
-  border: none;
+  border: 1px solid #67b311;
   border-radius: 5px;
+  box-shadow: 0  0px 14px 0px gray;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
 
 }
 .h6text{
@@ -90,28 +108,253 @@
     color: var(--bs-heading-color);
 }
 .homeapplybutton:hover{
-  background-color: #e5e5e5;
-  color: rgb(0, 0, 0);
+  background-color: #49800a;
+  color: rgb(255, 255, 255);
 }
-.homepost{
+.hometext1{
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   color: rgb(0, 0, 0);
   margin-left: 0px;
   text-align: center;
   width: 100%;
+  /* filter: brightness(100%); */
+  -webkit-text-stroke-width: thin;
+}
+.hometext2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgb(0, 0, 0);
+  margin-left: 0px;
+  text-align: center;
+  width: 100%;
+  /* filter: brightness(100%); */
+  font-size: larger;
 }
 .homeform {
-    padding: 20px;
-    margin-top: 4rem;
+    padding: 3px;
+    margin-top: 0rem;
     margin-bottom: 1rem;
-    width: 50%;
+    height: 60px;
+    width: 58%;
     align-items: center;
-    box-shadow: #282c34;
+    box-shadow: 0px 0px 15px 3px white;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+    filter: brightness(100%);
+    border-radius: 10px
+    
+   
+}
+::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: rgb(255, 255, 255);
 }
 .homesearchbtn{
-  border-radius: 4px;
-  box-shadow: #282c34;
+ border-radius: 5px;
+  box-shadow: #000000;
+  width: 16%;
+  height: 42px;
+  background-color: #2171D5;
+  color: white;
+  border:"0px";
+}
+.homesearchbtn:hover {
+ border-radius: 5px;
+  box-shadow: #000000;
+  width: 16.2%;
+  height: 44px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border:"0px";
+}
+
+
+
+
+.addSection1{
+  background-color: #f9f9f9;
+  margin: -70px 0px 0px 0px;
+    width: 100%;
+    height: 580px;
+    /* size: 'cover'; */
+    
+  /* z-index: 2; */
+}
+
+.popularSearch {
+  color: white;
+  padding: 0px;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    height: 251px;
+    width: 52.5%;
+    align-items: center;
+    --webkit-box-shadow: 0 8px 6px -6px gray;
+    border-bottom: 0;
+    filter: brightness(100%);
+    border-radius: 10px;
+    text-align: left;
+}
+.popularSearchbtn{
+  width:90px
+}
+.popularSearchbtn:hover {
+  background-color: #2171D5;
+  color: white;
+  box-shadow: rgb(255, 255, 255) 0px 0px 10px 2px;
+  height: 38px;
+}
+.popularSearch1 {
+  color: white;
+  padding: 25px;
+    height: 251px;
+    width: 338px;
+    align-items: center;
+    border-bottom: 0;
+    filter: brightness(100%);
+    border-radius: 10px 0px 0px 10px;
+    text-align: left;
+}
+.popularSearch2 {
+  color: rgb(0, 0, 0);
+  padding: 25px;
+    height: 122px;
+    width: 226px;
+    align-items: center;
+    border-bottom: 0;
+    filter: brightness(100%);
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.howitworks {
+  width: 184px;
+  height: 53px;
+  border-radius: 10px;
+  background-color: #f0f8ff00;
+  font-size: large;
+  font-weight: bold;
+  box-shadow: 0px 0px 9px 0px #a3a3a3;
+}
+
+.homemobile {
+  margin: 0% 3% 0% 3%;
+    background-color: #ffffff;
+    width: 300px;
+    height: 16rem;
+    border-radius: 30px 30px 0px 0px;
+    border-right: 10px solid #2171D5;
+    border-top: 2px solid #2171D5;
+    border-left: 2px solid #2171D5;
+    border-bottom: 0px solid #2171D5;
+    padding: 10px 10px 0px 10px;
+    display: inline-block;
+}
+
+.homemobileinner{
+  background-color: #e6e6e6;
+  border-radius: 20px 20px 0px 0px;
+  height: 244px;
+  padding: 15px;
+}
+
+.profileicon{
+  background-color: white;
+    margin: 0px 104px 0px 0px;
+    height: 28px;
+    display: inline-block;
+    width: 28px;
+    border-radius: 20px;
+}
+
+.profilebutton{
+  margin: 0px 0px 5px 0px;
+  display: inline-block;
+  border-radius: 5px;
+  background: #2171D5;
+  border: 0px;
+  color: aliceblue;
+  height: 33px;
+  width: 90px;
+}
+
+.mobileinnerrmost{
+  background: white;
+    height: 166px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.profileSmalldisplay{
+  border: 0px;
+  height: 20px;
+  /* align-items: baseline; */
+  width: 60px;
+  /* display: grid; */
+  margin: 10px 148px 1px 6px;
+  /* text-align: left; */
+  border-radius: 10px;
+}
+
+.profilelargedisplay{
+  border: 0px;
+  height: 36px;
+  /* align-items: baseline; */
+  width: 202px;
+  /* display: grid; */
+  margin: 8px 0px 0px 0px;
+  /* text-align: left; */
+  border-radius: 10px;
+}
+
+.ndmobile{
+  background-color: white;
+  height: 50px;
+  align-items: center;
+  display: inline-flex;
+  margin: 0px 0px 10px 0px;
+  padding: 5px 8px 0px 0px;
+  border-radius: 10px;
+}
+
+
+.sectionThree {
+  text-align: center;
+  background-color: #f0f4f7;
+  padding: 20px;
+}
+
+.custom-carousel .carousel-control-next,
+.custom-carousel .carousel-control-prev {
+  width: 5%;
+}
+
+.job-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.company-logo {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
 }

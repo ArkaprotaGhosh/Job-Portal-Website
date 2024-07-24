@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UseAutheContext } from "../../hooks/UseAutheContext";
+import "./header/Home.css"
 
 const Login = () => {
 
@@ -51,7 +52,7 @@ const Login = () => {
 
         // Update the auth context
         dispatch({ type: 'LOGIN', payload: data });
-        navigate('/')
+        navigate('/jobs')
         setIsLoading(false);
 
       }
@@ -92,35 +93,63 @@ const Login = () => {
 
   return (
     <>
+      <div>
+        <div className="diva">
+          <p className="para1">Keep Applying!!</p>
+          <p className="para2">200% HIKE IN SALARY</p>
+          <p className="para3">
+            Your dream job is closer than you think. We focus on your career aspirations, matching your unique skills and goals with the best opportunities available. Our personalized approach ensures you find the perfect fit. Start your journey to success with us today and unlock your full potential!
+          </p>
+        </div>
 
-      <div className="login-form-container">
-        <h2>User Login</h2>
-        {message && <div className="message">{message}</div>}
-        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-        <form onSubmit={handleSubmit} className="login-form">
-          {/* //-------email-------\\ */}
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            ref={emailRef}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+        {/* <div className="divb">
+          <p className="para4">SIGN IN</p>
+          <form>
+            <div className="form-group">
+              <input type="text" name="user_id" placeholder="User ID" />
+              <br />
+            </div>
+            <div className="form-group">
+              <input type="password" name="password" placeholder="Password" />
+            </div>
+            <div className="form-checkbox">
+              <input type="checkbox" name="keep_me_logged_in" id="checkbox" />
+              <label htmlFor="checkbox">Keep me logged in</label>
+            </div>
+            <button className="btn" type="submit">LOGIN</button>
+          </form>
+        </div> */}
 
-          {/* //---------password---------\\ */}
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button className="button-btn" type="submit">Login</button>
-          <Link className="forgetpassword" to="/signup"><strong>Create Account</strong></Link>
-        </form>
+
+        <div className="login-form-container">
+          <h2>User Login</h2>
+          {message && <div className="message">{message}</div>}
+          <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+          <form onSubmit={handleSubmit} className="login-form">
+            {/* //-------email-------\\ */}
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              ref={emailRef}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+
+            {/* //---------password---------\\ */}
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button className="button-btn" type="submit">Login</button>
+            <Link style={{ color: "#67b311" }} to="/signup"><strong>Create Account</strong></Link>
+          </form>
+        </div>
       </div>
     </>
 

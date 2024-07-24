@@ -36,11 +36,17 @@ const AdminLogin = () => {
     // }
 
   }
-  
+
 
   return (
     <>
-
+      <div className="diva">
+        <p className="para1">Keep Applying!!</p>
+        <p className="para2">200% HIKE IN SALARY</p>
+        <p className="para3">
+          Your dream job is closer than you think. We focus on your career aspirations, matching your unique skills and goals with the best opportunities available. Our personalized approach ensures you find the perfect fit. Start your journey to success with us today and unlock your full potential!
+        </p>
+      </div>
       <div className="login-form-container">
         <h2>Admin Login</h2>
         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -69,7 +75,7 @@ const AdminLogin = () => {
           {/* <Link to={`/addjob/${data._id}`}> */}
           <button className="button-btn" type="submit">Login</button>
           {/* </Link> */}
-          <Link className="forgetpassword" to="/adminsignup"><strong>Create Account</strong></Link>
+          <Link style={{ color: "#67b311" }} to="/adminsignup"><strong>Create Account</strong></Link>
         </form>
       </div>
     </>
