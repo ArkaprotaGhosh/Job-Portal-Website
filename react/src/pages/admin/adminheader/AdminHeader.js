@@ -24,27 +24,28 @@ const AdminHeader = () => {
 
     return (
         <div >
-            <nav className="navbar">
+            <nav className="navbar" style={{backgroundColor :"#ededed63"}}>
                 <div className="navbar-container">
-                    <h1 className="logo" >Get Jobs</h1>
+                    <h1 className="logo" style={{color:"black"}} >Get Jobs</h1>
                     {/* //---------Admin is active--------------\\ */}
                     {user && (<>
                     <> <NavLink to='/getjobadmin'><h1 to='/adminlogin' className="logo">Dashboard</h1></NavLink></>
                         <div className="right-section">
                             <span>{user.data.email}</span>
-                            <Link to='/adminlogin'><button className="login-btn" onClick={handleClick}>Log Out</button> </Link>
+                            <Link to='/adminlogin'><button className="login-btn" onClick={handleClick} style={{color:"black"}}>Log Out</button> </Link>
                         </div>
                     </>)}
 
                     {/* //------------Admin is not active-------------\\ */}
                     {!user && (<>
 
-                        <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+                        <div className={`navbar-links ${isOpen ? 'active' : ''}`} style={{color: "black"}}>
                             <ul>
                                 <li>
                                     <NavLink
                                         to="/"
                                         exact
+                                        style={{color:"black"}}
                                         className={activeLink === '/' ? 'active' : ''}
                                         onClick={() => handleNavLinkClick('/')}
                                     >
@@ -55,6 +56,7 @@ const AdminHeader = () => {
                                     <NavLink
                                         to="/adminsignup"
                                         exact
+                                        style={{color:"black"}}
                                         className={activeLink === '/adminsignup' ? 'active' : ''}
                                         onClick={() => handleNavLinkClick('/adminsignup')}
                                     >
@@ -66,8 +68,8 @@ const AdminHeader = () => {
 
                         <div className="right-section">
                             {/* //-------Admin Login & Signup--------\\ */}
-                            <Link to="/adminlogin" ><button className="login-btn">Login</button> </Link>
-                            <Link to="/adminsignup" ><button className="signup-btn">Signup</button></Link>
+                            <Link to="/adminlogin" ><button className="login-btn" style={{backgroundColor:"blue", color:"white"}}>Login</button> </Link>
+                            <Link to="/adminsignup" ><button className="signup-btn" style={{border:"2px solid blue", color: "blue"}}>Signup</button></Link>
                             <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
                                 <NavLink
                                     to="/"
@@ -75,9 +77,10 @@ const AdminHeader = () => {
                                     className={activeLink === '/adminsignup' ? 'active' : ''}
                                     onClick={() => handleNavLinkClick('/adminsignup')}
                                     style={{
-                                        borderLeft: "2px solid white",
+                                        borderLeft: "2px solid blue",
                                         marginLeft: "21px",
                                         padding: "10px 21px 10px 21px",
+                                        color:"black"
                                     }}
                                 >
                                     Find Jobs

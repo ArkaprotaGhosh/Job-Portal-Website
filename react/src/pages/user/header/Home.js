@@ -438,14 +438,17 @@ const Home = () => {
                 borderRadius: "0px 0px 40px 40px",
                 backgroundColor: "rgb(22, 85, 143)",
                 width: "85%",
-                color: "whitesmoke"
+                color: "whitesmoke",
               }}
             >
               <h2>Featured Jobs</h2>
               <p>The advice helped me feel prepared</p>
             </div>
           </div>
-          <Container className="d-flex justify-content-center align-items-center" style={{ width: '85%' }}>
+          <Container
+            className="d-flex justify-content-center align-items-center"
+            style={{ width: "85%" }}
+          >
             <Row>
               {jobCategories.map((category, index) => (
                 <Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-4">
@@ -458,7 +461,7 @@ const Home = () => {
                 </Col>
               ))}
             </Row>
-            </Container>
+          </Container>
           <div className="text-center p-5">
             <a href="#explore-more">Explore More</a>
           </div>
@@ -466,44 +469,227 @@ const Home = () => {
       </section>
       <section>
         <div className="sectionThree">
-      <h2 className="text-center my-4">Top companies Hiring Now</h2>
-      <Carousel indicators={false} nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />} prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} className="custom-carousel">
-        <Carousel.Item>
-          <div className="d-flex justify-content-center">
-            <div className="job-card">
-              <h3 className="company-logo">KOMATSU</h3>
-              <h4>Data Science</h4>
-              <p>Jaipur, Rajasthan</p>
-              <p>Full Time</p>
-              <button className="btn btn-primary">View jobs</button>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="d-flex justify-content-center">
-            <div className="job-card">
-              <h3 className="company-logo">NTT</h3>
-              <h4>Graphic Designer</h4>
-              <p>Kolkata, West Bengal</p>
-              <p>Full Time</p>
-              <button className="btn btn-primary">View jobs</button>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="d-flex justify-content-center">
-            <div className="job-card">
-              <h3 className="company-logo">JAL</h3>
-              <h4>UI Designer</h4>
-              <p>Delhi</p>
-              <p>Full Time</p>
-              <button className="btn btn-primary">View jobs</button>
-            </div>
-          </div>
-        </Carousel.Item>
-      </Carousel>
-    </div>
+          <h2 className="text-center my-4">Top companies Hiring Now</h2>
+          <Carousel
+            indicators={false}
+            nextIcon={
+              <span aria-hidden="true" className="carousel-control-next-icon" />
+            }
+            prevIcon={
+              <span aria-hidden="true" className="carousel-control-prev-icon" />
+            }
+            className="custom-carousel"
+          >
+            <Carousel.Item>
+              <div className="d-flex justify-content-center">
+                <div className="job-card">
+                  <h3 className="company-logo">KOMATSU</h3>
+                  <h4>Data Science</h4>
+                  <p>Jaipur, Rajasthan</p>
+                  <p>Full Time</p>
+                  <button className="btn btn-primary">View jobs</button>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div className="d-flex justify-content-center">
+                <div className="job-card">
+                  <h3 className="company-logo">NTT</h3>
+                  <h4>Graphic Designer</h4>
+                  <p>Kolkata, West Bengal</p>
+                  <p>Full Time</p>
+                  <button className="btn btn-primary">View jobs</button>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div className="d-flex justify-content-center">
+                <div className="job-card">
+                  <h3 className="company-logo">JAL</h3>
+                  <h4>UI Designer</h4>
+                  <p>Delhi</p>
+                  <p>Full Time</p>
+                  <button className="btn btn-primary">View jobs</button>
+                </div>
+              </div>
+            </Carousel.Item>
+          </Carousel>
+        </div>
       </section>
+      <section
+        id="promo-page-features"
+        class="d-flex align-items-center py-5 bg-dark text-light"
+        style={{ minHeight: "80vh" }}
+      >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <h1 class="display-4">Our Service</h1>
+              <h6 class="card-title">Elevate your career with us!</h6>
+              <div class="row row-cols-1 row-cols-md-2 g-3 py-4">
+                <div class="col">
+                  <div class="card h-100 border-secondary text-bg-dark">
+                    <div class="card-body">
+                      <h5 class="card-title">Skill Development</h5>
+                      <p class="card-text">
+                        Transform Yourself: Build Essential Personal Development
+                        Skills Today for a Better Tomorrow.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 border-secondary text-bg-dark">
+                    <div class="card-body">
+                      <h5 class="card-title">Resume Writting</h5>
+                      <p class="card-text">
+                        Transform Your Resume into a Game-Changer: Capture
+                        Attention and Unlock Career Opportunities!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 border-secondary text-bg-dark">
+                    <div class="card-body">
+                      <h5 class="card-title">Interview Coaching</h5>
+                      <p class="card-text">
+                        Master Your Interviews with Ease: Expert Coaching to
+                        Help You Shine and Land Your Dream Job!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 border-secondary text-bg-dark">
+                    <div class="card-body">
+                      <h5 class="card-title">Career Counseling</h5>
+                      <p class="card-text">
+                        Navigate Your Career Path with Confidence: Expert
+                        Counseling to Unlock Your Full Potential and Achieve
+                        Your Goals!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <img
+                src="{{asset('/images/promo/promo-page-features.svg')}}"
+                alt="promo-page-features"
+                class="w-100 img-fluid bg-random"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style={{ backgroundColor: "rgb(22, 85, 143)" }}>
+        <Container>
+          <div className="d-flex justify-content-center align-items-center">
+            <div
+              className="text-center p-4 mb-5"
+              style={{
+                borderRadius: "0px 0px 40px 40px",
+                backgroundColor: "white",
+                width: "85%",
+                color: "Black",
+              }}
+            >
+              <h2>Success Stories</h2>
+              <p>Join the community of 5 crore satisfied job seeker</p>
+            </div>
+          </div>
+          <Container
+            className="d-flex justify-content-center align-items-center pb-5"
+            style={{ width: "85%" }}
+          >
+            <Carousel
+              indicators={false}
+              nextIcon={
+                <span
+                  aria-hidden="true"
+                  className="carousel-control-next-icon"
+                />
+              }
+              prevIcon={
+                <span
+                  aria-hidden="true"
+                  className="carousel-control-prev-icon"
+                />
+              }
+              className="custom-carousel"
+            >
+              <Carousel.Item>
+                <div className="d-flex justify-content-center">
+                  <div className="job-card">
+                    <h3 className="company-logo">KOMATSU</h3>
+                    <h4>Data Science</h4>
+                    <p>Jaipur, Rajasthan</p>
+                    <p>Full Time</p>
+                    <button className="btn btn-primary">View jobs</button>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="d-flex justify-content-center">
+                  <div className="job-card">
+                    <h3 className="company-logo">NTT</h3>
+                    <h4>Graphic Designer</h4>
+                    <p>Kolkata, West Bengal</p>
+                    <p>Full Time</p>
+                    <button className="btn btn-primary">View jobs</button>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="d-flex justify-content-center">
+                  <div className="job-card">
+                    <h3 className="company-logo">JAL</h3>
+                    <h4>UI Designer</h4>
+                    <p>Delhi</p>
+                    <p>Full Time</p>
+                    <button className="btn btn-primary">View jobs</button>
+                  </div>
+                </div>
+              </Carousel.Item>
+            </Carousel>
+          </Container>
+        </Container>
+      </section>
+      {/* <section>
+        <div class="nI-gNb-slider bg-black">
+          <div style={{transform: "translateX(-900px)", transition: "transform 0.45s ease-out", height: "100%", width: "3480px", display: "flex"}}>
+            <ul class="nI-gNb-sc__main">
+              <li class="slide-item bg-light">
+                <div class="item">
+                 aaaaaaaaaa
+                </div>
+              </li>
+              <li class="slide-item">
+                <div class="item">
+                 bbbbbbbb
+                </div>
+              </li>
+              <li class="slide-item">
+                <div class="item">
+                  ddddddddddddddd
+                </div>
+              </li>
+              <li class="slide-item">
+                <div class="item">
+                  eeeeeeeeeeeeeeeec
+                </div>
+              </li>
+              <li class="slide-item">
+                <div class="item">
+                  ccccccccccccc
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section> */}
     </>
   );
 };
