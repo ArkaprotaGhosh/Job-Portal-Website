@@ -39,7 +39,7 @@
   margin-bottom: 0rem;
     font-weight: 500;
     line-height: 2;
-    color:  #67b311;
+    color:  rgb(14 114 223);
     margin-left: 0px;
     text-align: left;
 }
@@ -90,10 +90,8 @@
   margin-left: 0px;
   text-align: center;
   width: 100%;
-  background-color: #67b311;;
   cursor: pointer;
   padding: 10px;
-  border: 1px solid #67b311;
   border-radius: 5px;
   box-shadow: 0  0px 14px 0px gray;
     --webkit-box-shadow: 0 8px 6px -6px gray;
@@ -108,7 +106,6 @@
     color: var(--bs-heading-color);
 }
 .homeapplybutton:hover{
-  background-color: #49800a;
   color: rgb(255, 255, 255);
 }
 .hometext1{

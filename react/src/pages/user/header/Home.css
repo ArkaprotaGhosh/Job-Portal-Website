@@ -90,10 +90,10 @@
   margin-left: 0px;
   text-align: center;
   width: 100%;
-  background-color: #67b311;;
+  background-color: blue;
   cursor: pointer;
   padding: 10px;
-  border: 1px solid #67b311;
+  border: 1px solid rgb(14 114 223);
   border-radius: 5px;
   box-shadow: 0  0px 14px 0px gray;
     --webkit-box-shadow: 0 8px 6px -6px gray;
@@ -108,7 +108,7 @@
     color: var(--bs-heading-color);
 }
 .homeapplybutton:hover{
-  background-color: #49800a;
+  background-color: #2171D5;
   color: rgb(255, 255, 255);
 }
 .hometext1{

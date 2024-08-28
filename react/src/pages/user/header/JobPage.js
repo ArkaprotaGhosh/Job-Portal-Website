@@ -1,18 +1,23 @@
 import React from 'react'
 import JobDetails from './JobDetails'
 import Jobs from './Jobs'
+import { SearchCP } from '../../components/reusable/SearchCP'
 
 const JobPage = () => {
     return (
         <>
-            <div>
-                <div style={{ margin: "0px 0px 0px -414px" }}>
+                <div>
+                <div><SearchCP /></div>
+
+            <div className='d-flex justify-content-center text-center'>
+                <div className='col-4'>
                     <Jobs />
                 </div>
-                {/* <div style={{margin: "-1920px 0px 1092px 1006px"}}>
+                <div className='col-4'>
                     <JobDetails />
 
-                </div> */}
+                </div>
+                </div>
 
 
 

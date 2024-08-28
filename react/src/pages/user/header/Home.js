@@ -518,8 +518,8 @@ const Home = () => {
       </section>
       <section
         id="promo-page-features"
-        class="d-flex align-items-center py-5 bg-dark text-light"
-        style={{ minHeight: "80vh" }}
+        class="d-flex align-items-center py-5 text-white"
+        style={{ minHeight: "80vh", backgroundColor: "rgb(22, 85, 143)" }}
       >
         <div class="container">
           <div class="row align-items-center">
@@ -528,7 +528,7 @@ const Home = () => {
               <h6 class="card-title">Elevate your career with us!</h6>
               <div class="row row-cols-1 row-cols-md-2 g-3 py-4">
                 <div class="col">
-                  <div class="card h-100 border-secondary text-bg-dark">
+                  <div class="card h-100 border-secondary">
                     <div class="card-body">
                       <h5 class="card-title">Skill Development</h5>
                       <p class="card-text">
@@ -539,7 +539,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div class="col">
-                  <div class="card h-100 border-secondary text-bg-dark">
+                  <div class="card h-100 border-secondary ">
                     <div class="card-body">
                       <h5 class="card-title">Resume Writting</h5>
                       <p class="card-text">
@@ -550,7 +550,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div class="col">
-                  <div class="card h-100 border-secondary text-bg-dark">
+                  <div class="card h-100 border-secondary ">
                     <div class="card-body">
                       <h5 class="card-title">Interview Coaching</h5>
                       <p class="card-text">
@@ -561,7 +561,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div class="col">
-                  <div class="card h-100 border-secondary text-bg-dark">
+                  <div class="card h-100 border-secondary ">
                     <div class="card-body">
                       <h5 class="card-title">Career Counseling</h5>
                       <p class="card-text">
@@ -584,16 +584,16 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section style={{ backgroundColor: "rgb(22, 85, 143)" }}>
+      <section style={{ backgroundColor: "white" }}>
         <Container>
           <div className="d-flex justify-content-center align-items-center">
             <div
               className="text-center p-4 mb-5"
               style={{
                 borderRadius: "0px 0px 40px 40px",
-                backgroundColor: "white",
+                backgroundColor: "rgb(22, 85, 143)",
                 width: "85%",
-                color: "Black",
+                color: "white",
               }}
             >
               <h2>Success Stories</h2>

@@ -35,8 +35,8 @@ function App() {
 
           {/* ----------------header------------------- */}
 
-          <Route path='/jobs' element={<JobPage />} />
-          <Route path='/jobslist' element={<Jobs />} />
+          <Route path='/jobPage' element={<JobPage />} />
+          <Route path='/jobs' element={<Jobs />} />
           <Route path='/jobsdetails/:id' element={<JobDetails />} />
           <Route path='/services' element={<Services />} />
           <Route path='/' element={<Home />} />
